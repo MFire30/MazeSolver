@@ -2,17 +2,17 @@ var matrixGrid1 = [[]];
 
 function changeCellWall(id, className){
 	const coord = extractCoordenates(id);
-	console.log("oi");
-	console.log(className);
 	
 	if(className === "square"){
-		document.getElementById(id).className = "square_wall";
+		$("#" + id).className = "square_wall";
 		$("#" + id).removeClass('square');
 		$("#" + id).addClass('square_wall');
+		
 		matrixGrid1[coord.y][coord.x].isWall = true;
 	} else {
 		$("#" + id).removeClass('square_wall');
 		$("#" + id).addClass('square');
+		
 		matrixGrid1[coord.y][coord.x].isWall = false;
 	}	
 }
@@ -24,25 +24,31 @@ function extractCoordenates(id){
 	return {y: matches[2], x: matches[1]};
 }
 
+function resetGrid(){
+	matrixGrid1 = [[]];
+	$("#grid1").empty();
+}
+
 function initializeGrid() {
 	const count = document.getElementById("size").value;
+	const isEmpty = $("#grid1").children().length === 0;
 	
-	for(var counterX = 0; counterX < count; counterX++){
-		matrixGrid1.push([]);
-		
-		for(var counterY = 0; counterY < count; counterY++){
-			var cell = newCell();
-			cell.x = counterX;
-			cell.y = counterY;
+	if(isEmpty){
+		for(var counterX = 0; counterX < count; counterX++){
+			matrixGrid1.push([]);
 			
-			matrixGrid1[counterX].push(cell);
-			setCellDiv(cell, count);
-			//console.log(matrixGrid1[counterY][counterX]);
-		}
+			for(var counterY = 0; counterY < count; counterY++){
+				var cell = newCell();
+				cell.x = counterX;
+				cell.y = counterY;
+				
+				matrixGrid1[counterX].push(cell);
+				setCellDiv(cell, count);
+			}
+		}	
+	} else {
+		console.error("The grid must be empty!");
 	}
-	
-	console.log(matrixGrid1);
-	
 }
 
 function setCellDiv(cell, count) {
@@ -63,6 +69,5 @@ function newCell(){
 		y: 0
 	};
 	
-	// console.log(cell);
 	return cell;
 }
