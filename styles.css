@@ -1,0 +1,72 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+#sidebar {
+    width: 200px;
+    height: 100%;
+    background-color: gray;
+    top: 0;
+    left: 0;
+    position: fixed;
+	float: left;
+	box-shadow: 2px 0px 2px 1px rgba(0, 0, 0, 0.2);
+	font-family: 'Roboto', sans-serif;
+}
+
+#sidebar a {
+	width: 200px;
+	height: 5%;
+    float: left;
+	margin-top: 5px;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#sidebar a:hover {
+    background: #f1f1f1;
+    color: black;
+}
+
+.grid {
+	float: left;
+	left: 210px;
+	height: 95vh;
+	width: 80vw;
+	position: fixed;
+}
+
+.square {
+  background-color: white;
+  float: left;
+  border: 0.5px solid gray;
+  box-sizing: border-box;
+}
+
+.square_wall {
+  background-color: black;
+  float: left;
+  border: 0.5px solid gray;
+  box-sizing: border-box;
+}
+
+.square_visited {
+  background-color: red;
+  float: left;
+  border: 0.5px solid gray;
+  box-sizing: border-box;
+}
+
+.square_idle {
+  background-color: green;
+  float: left;
+  border: 0.5px solid gray;
+  box-sizing: border-box;
+}
