@@ -33,6 +33,7 @@ body {
 #sidebar a:hover {
     background: #f1f1f1;
     color: black;
+	transition: background 0.4s;
 }
 
 .grid {
@@ -48,6 +49,7 @@ body {
   float: left;
   border: 0.5px solid gray;
   box-sizing: border-box;
+  transition: background-color 0.5s;
 }
 
 .square_wall {
@@ -55,6 +57,8 @@ body {
   float: left;
   border: 0.5px solid gray;
   box-sizing: border-box;
+ 
+  transition: background-color 0.5s;
 }
 
 .square_visited {
@@ -62,6 +66,7 @@ body {
   float: left;
   border: 0.5px solid gray;
   box-sizing: border-box;
+  transition: background-color 0.5s;
 }
 
 .square_idle {
@@ -69,4 +74,5 @@ body {
   float: left;
   border: 0.5px solid gray;
   box-sizing: border-box;
+  transition: background-color 0.5s;
 }
