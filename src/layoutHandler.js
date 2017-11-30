@@ -31,6 +31,15 @@ function resetGrid(){
 
 function initializeGrid() {
 	const count = document.getElementById("size").value;
+	
+	if(count > 100){
+		const hardWork = confirm("The grid generation for over 100 is way too slow. Are you sure?");
+		
+		if(!hardWork){
+			return;
+		}
+	}
+	
 	const isEmpty = $("#grid1").children().length === 0;
 	
 	if(isEmpty){
@@ -47,7 +56,8 @@ function initializeGrid() {
 			}
 		}	
 	} else {
-		console.error("The grid must be empty!");
+		resetGrid();
+		initializeGrid();
 	}
 }
 
